@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root {
+      --accent: #D4A63A; /* GOLD color */
+      --text-muted: rgb(140, 142, 143);
+    }
+    body {
+        background-color: rgb(231, 228, 228);
+        
+        }
+ h2, p {
+  margin: 0;
+}
+
+        nav{
+            margin-top: 30px;
+            display: flex;
+            font-family:'Inter', sans-serif, serif;
+            
+            margin-left: 10px;
+            
+            
+        }
+         .accent {
+      color: var(--accent);
+    }
+
+    nav .skill{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 450px;
+        align-items: center;
+        gap: 40px;
+        color:rgb(140, 142, 143)
+        }
+    h2 {
+        margin-left: 10px;
+       font-family: 'Playfair Display', serif;
+       font-size: 30px;
+       
+    }
+
+  nav button{
+     background-color: var(--accent);
+  margin-left: 400px;      /* unchanged */
+  border-radius: 10px;
+  font-weight:bold;
+  border: #D4A63A;
+  font-size: medium;
+  font-family: 'Inter', sans-serif, serif;
+
+  padding: 10px 20px;   
+  margin-top: -10px;    /* top-bottom | left-right */
+        /* reduces height further */
+}
+.main{
+    text-align: center;
+    margin: 200px;
+}
+.main h1{
+    font-size: 90px;
+}
+.main h3{
+    color:rgb(140, 142, 143);
+      font-family: 'Inter', sans-serif, serif;
+      font-weight: lighter;
+
+      font-size: large;
+    
+
+}
+#ome{
+    margin-top: -40px;
+    font-size:28px;
+}
+#two{
+    margin-top:40px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 24px;              
+  margin-top: 40px;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;              
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.btn.primary {
+  background-color: var(--accent);
+  color: #111;
+  border: none;
+  box-shadow: 0 10px 25px rgba(212, 166, 58, 0.35);
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+}
+
+/* Outline button */
+.btn.outline {
+  background-color: white;
+  color: #111;
+  border: 1.5px solid #e5e5e5;
+}
+
+.btn.outline:hover {
+  background-color: #f7f7f7;
+}
+.about-section {
+      display: flex;
+      justify-content: space-between;
+      gap: 80px;
+      padding: 140px 120px;
+    }
+
+    /* LEFT TEXT */
+    .aboutme {
+      max-width: 520px;
+    }
+
+    .aboutme h5 {
+      color: var(--accent);
+      letter-spacing: 3px;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .aboutme h1 {
+      font-size: 56px;
+      font-family: 'Playfair Display', serif;
+      line-height: 1.1;
+      margin-bottom: 28px;
+    }
+
+    .aboutme p {
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* RIGHT CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 260px);
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      border: 1px solid #eee;
+    }
+
+    .card span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #f4f2ee;
+      color: var(--accent);
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    .card h4 {
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .card:hover{
+      transform: scale(1.1);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+    } 
+    /* ===== SKILLS SECTION ===== */
+
+.skills-section {
+  padding: 140px 120px;
+  text-align: center;
+}
+
+.section-tag {
+  color: var(--accent);
+  letter-spacing: 3px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 56px;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 70px;
+  font-size: 16px;
+}
+
+/* Cards Layout */
+.skills-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* Individual Card */
+.skill-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 32px;
+  text-align: left;
+  border: 1px solid #eee;
+}
+
+.skill-card h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+}
+ .skill-card:hover{
+      transform: scale(1.1);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+/* Skill Row */
+.skill {
+  margin-bottom: 22px;
+}
+
+.skill span {
+  display: inline-block;
+  font-size: 14px;
+}
+
+.skill span:last-child {
+  float: right;
+  color: var(--text-muted);
+}
+
+/* Progress Bar */
+.bar {
+  background: #f1efe9;
+  height: 8px;
+  border-radius: 20px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.bar div {
+  height: 100%;
+  background: linear-gradient(90deg, #D4A63A, #b88a2e);
+  border-radius: 20px;
+}
+/* ===== PROJECTS SECTION ===== */
+
+.projects-section {
+  padding: 140px 120px;
+  text-align: center;
+}
+
+/* Title already matches previous sections */
+.projects-grid {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+/* Project Card */
+.project-card {
+  background: white;
+  border-radius: 22px;
+  padding: 48px;
+  text-align: left;
+  border: 1px solid #eee;
+}
+ .project-card:hover{
+      transform: scale(1.1);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+/* Badge */
+.badge {
+  display: inline-block;
+  background: #f6f3ec;
+  color: var(--accent);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+/* Project Title */
+.project-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* Role */
+.project-card h4 {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+/* Description */
+.project-card p {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+/* Tech stack pills */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.tech-stack span {
+  background: #f4f2ee;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+/* Buttons */
+.project-links {
+  display: flex;
+  gap: 16px;
+}
+
+.outline-btn {
+  background: white;
+  border: 1.5px solid #e5e5e5;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.outline-btn:hover {
+  background: #f7f7f7;
+}
+
+
+.education-section {
+  padding: 140px 120px;
+  text-align: center;
+}
+
+
+.education-grid {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+
+.edu-card {
+  background: white;
+  border-radius: 22px;
+  padding: 50px 40px;
+  text-align: left;
+  border: 1px solid #eee;
+}
+
+
+.icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: #f6f3ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--accent);
+  margin-bottom: 30px;
+}
+
+
+.edu-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  line-height: 1.3;
+  margin-bottom: 14px;
+}
+
+.year {
+  display: block;
+  color: var(--accent);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+
+.college {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+
+.cgpa {
+  font-size: 15px;
+}
+
+.cgpa span {
+  background: #f6f3ec;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: var(--accent);
+  margin-left: 8px;
+}
+
+
+.cert {
+  background: #f6f3ec;
+  padding: 14px 18px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+
+.cert strong {
+  display: block;
+  font-size: 15px;
+}
+
+.cert span {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+
+.interest {
+  background: #f6f3ec;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+
+.contact-section {
+  padding: 140px 120px;
+  text-align: center;
+}
+
+.contact-grid {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+.contact-info {
+  text-align: left;
+}
+
+.contact-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  padding: 22px 24px;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  margin-bottom: 22px;
+}
+
+.info-box span {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.info-box p {
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.contact-info h4 {
+  margin-top: 40px;
+  margin-bottom: 18px;
+  font-size: 18px;
+}
+
+
+.socials {
+  display: flex;
+  gap: 14px;
+}
+
+.social {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  cursor: pointer;
+}
+
+
+.contact-form {
+  background: white;
+  padding: 48px;
+  border-radius: 22px;
+  border: 1px solid #eee;
+  text-align: left;
+}
+
+.contact-form h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 28px;
+}
+
+.contact-form label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 6px;
+  margin-top: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.send-btn {
+  margin-top: 28px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--accent);
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+</style>
+<body>
+    <nav>
+        <h2>Prabhu</h2>
+        <div class="skill">
+        <p>About</p>
+        <p>Skills</p>
+        <p>Project</p>
+        <p>Education</p>
+        <p>Product</p>
+        </div>
+        <button>Lets talk</button>
+    </nav>
+    <div class="main">
+         <h1>Hi, I'm <span class="accent">Prabhu A</span></h1>
+            <h3 id="ome">Frontend Developer & UI/UX Designer</h3>
+            <h3 id="two">IT undergraduate passionate about crafting elegant digital experiences. I blend<br>
+                creativity with clean code to build interfaces that users love.</h3>
+            <div class="btn-group">
+  <button class="btn primary">
+    View Projects <span>↗</span>
+  </button>
+
+  <button class="btn outline">
+    Download Resume <span>↓</span>
+  </button>
+    </div>
+    </div>
+<section class="about-section">
+
+    <div class="aboutme">
+      <h5>ABOUT ME</h5>
+      <h1>
+        Crafting Digital<br>
+        <span class="accent">Experiences</span>
+      </h1>
+
+      <p>
+        I'm a motivated IT undergraduate at Bannari Amman Institute of Technology
+        with a passion for frontend development and UI/UX design.
+        <br><br>
+        I believe in the power of clean design and efficient code. Every pixel
+        matters, and every line of code should serve a purpose.
+        <br><br>
+        When I'm not coding, you'll find me exploring AI/ML concepts, designing
+        user interfaces, or brainstorming the next big project idea.
+      </p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <span>&lt;/&gt;</span>
+        <h4>Clean Code</h4>
+        <p>Writing maintainable and efficient code</p>
+      </div>
+
+      <div class="card">
+        <span>🎨</span>
+        <h4>UI/UX Design</h4>
+        <p>Creating intuitive user experiences</p>
+      </div>
+
+      <div class="card">
+        <span>🏆</span>
+        <h4>Hackathon Winner</h4>
+        <p>Proven problem-solving skills</p>
+      </div>
+
+      <div class="card">
+        <span>🚀</span>
+        <h4>Quick Learner</h4>
+        <p>Always exploring new technologies</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+<!-- SKILLS SECTION -->
+<section class="skills-section">
+
+  <h5 class="section-tag">EXPERTISE</h5>
+  <h1 class="section-title">
+    Technical <span class="accent">Skills</span>
+  </h1>
+
+  <p class="section-subtitle">
+    A comprehensive toolkit built through continuous learning and practical application
+  </p>
+
+  <div class="skills-cards">
+
+    <!-- Card 1 -->
+    <div class="skill-card">
+      <h3>Programming Languages</h3>
+
+      <div class="skill">
+        <span>Python</span><span>85%</span>
+        <div class="bar"><div style="width:85%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span>Java</span><span>75%</span>
+        <div class="bar"><div style="width:75%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span>C</span><span>70%</span>
+        <div class="bar"><div style="width:70%"></div></div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="skill-card">
+      <h3>Web Technologies</h3>
+
+      <div class="skill">
+        <span>HTML5</span><span>90%</span>
+        <div class="bar"><div style="width:90%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span>CSS3</span><span>88%</span>
+        <div class="bar"><div style="width:88%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span>JavaScript</span><span>82%</span>
+        <div class="bar"><div style="width:82%"></div></div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="skill-card">
+      <h3>Tools & Platforms</h3>
+
+      <div class="skill">
+        <span>Git & GitHub</span><span>85%</span>
+        <div class="bar"><div style="width:85%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span>VS Code</span><span>90%</span>
+        <div class="bar"><div style="width:90%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span>Figma</span><span>80%</span>
+        <div class="bar"><div style="width:80%"></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- PROJECTS SECTION -->
+<section class="projects-section">
+
+  <h5 class="section-tag">PORTFOLIO</h5>
+  <h1 class="section-title">
+    Featured <span class="accent">Projects</span>
+  </h1>
+
+  <p class="section-subtitle">
+    Showcasing my journey through hackathons and development projects
+  </p>
+
+  <div class="projects-grid">
+
+    <!-- Project Card 1 -->
+    <div class="project-card">
+
+      <span class="badge">🏆 Hackathon</span>
+
+      <h3>BIT Hackathon Project</h3>
+      <h4>Frontend Developer & UI/UX Designer</h4>
+
+      <p>
+        Led the frontend development and designed the complete user interface
+        for a hackathon project. Focused on creating an intuitive and visually
+        appealing experience.
+      </p>
+
+      <div class="tech-stack">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Figma</span>
+      </div>
+
+      <div class="project-links">
+        <button class="outline-btn">🐙 Code</button>
+        <button class="outline-btn">↗ View</button>
+      </div>
+
+    </div>
+
+    <!-- Project Card 2 -->
+    <div class="project-card">
+
+      <span class="badge">🏆 Hackathon</span>
+
+      <h3>Smart India Hackathon 2025</h3>
+      <h4>Team Member</h4>
+
+      <p>
+        Contributing to a disaster awareness and management system.
+        Working on developing solutions that help communities prepare
+        for and respond to natural disasters.
+      </p>
+
+      <div class="tech-stack">
+        <span>Python</span>
+        <span>JavaScript</span>
+        <span>API Integration</span>
+      </div>
+
+      <div class="project-links">
+        <button class="outline-btn">🐙 Code</button>
+        <button class="outline-btn">↗ View</button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- EDUCATION SECTION -->
+<section class="education-section">
+
+  <h5 class="section-tag">BACKGROUND</h5>
+  <h1 class="section-title">
+    Education & <span class="accent">Credentials</span>
+  </h1>
+
+  <div class="education-grid">
+
+    <!-- Education Card -->
+    <div class="edu-card">
+      <div class="icon-box">🎓</div>
+
+      <h3>B.Tech Information Technology</h3>
+      <span class="year">2024 — 2028</span>
+
+      <p class="college">
+        Bannari Amman Institute of Technology
+      </p>
+
+      <div class="cgpa">
+        CGPA: <span>7.90</span>
+      </div>
+    </div>
+
+    <!-- Certifications Card -->
+    <div class="edu-card">
+      <div class="icon-box">🏅</div>
+
+      <h3>Certifications</h3>
+
+      <div class="cert">
+        <strong>Oracle Java Certification</strong>
+        <span>In Progress</span>
+      </div>
+
+      <div class="cert">
+        <strong>Front-End Developer</strong>
+        <span>Coursera</span>
+      </div>
+    </div>
+
+    <!-- Interests Card -->
+    <div class="edu-card">
+      <div class="icon-box">✨</div>
+
+      <h3>Interests</h3>
+
+      <div class="interest">Artificial Intelligence & Machine Learning</div>
+      <div class="interest">UI/UX Design</div>
+      <div class="interest">Game Development</div>
+      <div class="interest">Graphic Design</div>
+      <div class="interest">Mobile App Development</div>
+    </div>
+
+  </div>
+</section>
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+
+  <h5 class="section-tag">GET IN TOUCH</h5>
+  <h1 class="section-title">
+    Let’s <span class="accent">Connect</span>
+  </h1>
+
+  <p class="section-subtitle">
+    Have a project in mind or want to discuss opportunities?
+    I’d love to hear from you.
+  </p>
+
+  <div class="contact-grid">
+
+    <!-- LEFT : CONTACT INFO -->
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+
+      <div class="info-box">
+        <div class="icon-box">✉️</div>
+        <div>
+          <span>Email</span>
+          <p>prabhu.a0306@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <div class="icon-box">📞</div>
+        <div>
+          <span>Phone</span>
+          <p>+91 7904245781</p>
+        </div>
+      </div>
+
+      <h4>Follow Me</h4>
+
+      <div class="socials">
+        <div class="social">in</div>
+        <div class="social">🐙</div>
+        <div class="social">↗</div>
+      </div>
+    </div>
+
+    <!-- RIGHT : FORM -->
+    <div class="contact-form">
+      <h3>Send a Message</h3>
+
+      <label>Your Name</label>
+      <input type="text" placeholder="John Doe">
+
+      <label>Email Address</label>
+      <input type="email" placeholder="john@example.com">
+
+      <label>Message</label>
+      <textarea rows="4" placeholder="Tell me about your project or opportunity..."></textarea>
+
+      <button class="send-btn">
+        Send Message ✈️
+      </button>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+    
+    
+    
+</body>
+</html>
